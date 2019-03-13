@@ -67,6 +67,14 @@ class MediathekViewPlugin(KodiPlugin):
             {'mode': "livestreams"},
             icon=os.path.join(self.path, 'resources', 'icons', 'live2-m.png')
         )
+
+        # Start ARD livestream
+        self.add_folder_item(
+            30910,
+            {'mode': "ard-livestream"},
+            icon=os.path.join(self.path, 'resources', 'icons', 'live2-m.png')
+        )
+
         # Browse recently added
         self.add_folder_item(
             30904,
@@ -282,6 +290,11 @@ class MediathekViewPlugin(KodiPlugin):
         elif mode == 'livestreams':
             self.database.get_live_streams(
                 FilmUI(self, [xbmcplugin.SORT_METHOD_LABEL]))
+
+        elif mode == 'ard-livestream':
+            self.database.get_ard_stream(
+                FilmUI(self, [xbmcplugin.SORT_METHOD_LABEL]))
+
         elif mode == 'recent':
             channel = self.get_arg('channel', 0)
             self.database.get_recents(channel, FilmUI(self))

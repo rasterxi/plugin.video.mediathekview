@@ -217,6 +217,11 @@ msgctxt "#30909"
 msgid "Update Database"
 msgstr "Datenbank aktualisieren"
 
+msgctxt "#30910"
+msgid "ARD Livestreams"
+msgstr "ARD Livestreams"
+
+
 # Film Context Menu
 msgctxt "#30921"
 msgid "Play with Subtitles"

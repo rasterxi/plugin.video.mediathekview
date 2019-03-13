@@ -195,6 +195,25 @@ class StoreSQLite(object):
             False
         )
 
+    def get_ard_live_stream(self, filmui):
+        """
+        Populates the current UI directory with the live
+        streams of ARD only
+
+        Args:
+            filmui(FilmUI): an instance of a film model view used
+                for populating the directory
+        """
+        return self._search_condition(
+            '( show.search="LIVESTREAM" AND channel="ARD")',
+            (),
+            filmui,
+            False,
+            False,
+            0,
+            False
+        )
+
     def get_channels(self, channelui):
         """
         Populates the current UI directory with the list

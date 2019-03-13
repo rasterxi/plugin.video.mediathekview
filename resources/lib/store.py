@@ -109,6 +109,17 @@ class Store(object):
         """
         return self.database.get_live_streams(filmui) if self.database is not None else 0
 
+    def get_ard_stream(self, filmui):
+        """
+        Populates the current UI directory with the live
+        streams, containing only ARD live stream
+
+        Args:
+            filmui(FilmUI): an instance of a film model view used
+                for populating the directory
+        """
+        return self.database.get_ard_live_stream(filmui) if self.database is not None else 0
+
     def get_channels(self, channelui):
         """
         Populates the current UI directory with the list
